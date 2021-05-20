@@ -28,7 +28,7 @@ body {
 }
 
 .boton {
-    background-color: var(--secundario);
+    background-color: var(--primario);
     color: #fff;
     padding: 1rem 3rem;
     margin-top: 1rem;
@@ -37,14 +37,19 @@ body {
     text-transform: uppercase;
     font-weight: 700;
     border-radius: .5rem;
-    width: 80½;
+    width: 80%;
     text-align: center;
+    border: none;
 }
 
 @media (min-width: 768px)  {
     .boton {
         width: auto;
     }
+}
+
+.boton:hover {
+    cursor: pointer;
 }
 
 .sombra {
@@ -84,6 +89,25 @@ h1,h2,h3 {
 .titulo span {
     font-size: 2rem;
     color: var(--cinto);
+}
+
+/* Utilidades */
+.w-sm-100 {
+    width: 100%;
+}
+
+@media (min-width: 768px)  {
+    .w-sm-100 {
+        width: auto;
+    }
+}
+
+.flex {
+    display: flex;    
+}
+
+.alinear-derecha {
+    justify-content: flex-end;
 }
 
 /* Navegacion Principal */
@@ -148,19 +172,21 @@ h1,h2,h3 {
 }
 
 /* Servicios */
-.servicios {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /*  repeat(3, 1fr) 
-        = 1fr 1fr 1fr 
-        = 33.3% 33.3% 33.3%*/
-    /* 33.3% = 1fr */
-    
-    /*  grid-template-rows: 200px 800px; 
-        grid-template-columns: 300px 300px;
-        = 
-        grid: 200px 800px / 300px 300px; */
-    column-count: 1rem;
+@media (min-width: 768px)  {
+    .servicios {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /*  repeat(3, 1fr) 
+            = 1fr 1fr 1fr 
+            = 33.3% 33.3% 33.3%*/
+        /* 33.3% = 1fr */
+        
+        /*  grid-template-rows: 200px 800px; 
+            grid-template-columns: 300px 300px;
+            = 
+            grid: 200px 800px / 300px 300px; */
+        column-count: 1rem;
+    }   
 }
 
 .servicio {
@@ -186,4 +212,48 @@ h1,h2,h3 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+/* Contatco */
+.formulario {
+    background-color: var(--secundario);
+    width: min( 60rem, 100% ); /* utilizar el valor mas pequeño */
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset {
+    border: none;
+}
+
+.formulario legend {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.contenedor-campos {
+
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
 }
